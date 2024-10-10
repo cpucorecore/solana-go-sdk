@@ -21,6 +21,25 @@ type GetBlockTransaction struct {
 	Version     any              `json:"version"`
 }
 
+type GetBlockTransactionDetail struct {
+	Message    any      `json:"message"`
+	Signatures []string `json:"signatures"`
+}
+
+type GetBlockTransactionMessage struct {
+	AccountKeys         []AccountKey `json:"accountKeys"`
+	AddressTableLookups []any        `json:"addressTableLookups"`
+	Instructions        []any        `json:"instructions"`
+	RecentBlockhash     string       `json:"recentBlockhash"`
+}
+
+type AccountKey struct {
+	Pubkey   string `json:"pubkey"`
+	Signer   bool   `json:"signer"`
+	Source   string `json:"source"`
+	Writable bool   `json:"writable"`
+}
+
 type GetBlockConfig struct {
 	Encoding                       GetBlockConfigEncoding           `json:"encoding,omitempty"`                       // default: "json"
 	TransactionDetails             GetBlockConfigTransactionDetails `json:"transactionDetails,omitempty"`             // default: "full", either "full", "signatures", "none"
