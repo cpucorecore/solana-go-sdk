@@ -16,14 +16,14 @@ type GetBlock struct {
 }
 
 type GetBlockTransaction struct {
-	Transaction any              `json:"transaction"`
-	Meta        *TransactionMeta `json:"meta"`
-	Version     any              `json:"version"`
+	Transaction GetBlockTransactionDetail `json:"transaction"`
+	Meta        *TransactionMeta          `json:"meta"`
+	Version     any                       `json:"version"`
 }
 
 type GetBlockTransactionDetail struct {
-	Message    any      `json:"message"`
-	Signatures []string `json:"signatures"`
+	Message    GetBlockTransactionMessage `json:"message"`
+	Signatures []string                   `json:"signatures"`
 }
 
 type GetBlockTransactionMessage struct {
