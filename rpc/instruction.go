@@ -23,7 +23,7 @@ type InstructionFull struct {
 	Program     string   `json:"program"`
 }
 
-type ParsedObjInfo struct {
+type InfoTransfer struct {
 	Amount      string `json:"amount"`
 	Authority   string `json:"authority"`
 	Destination string `json:"destination"`
@@ -31,13 +31,13 @@ type ParsedObjInfo struct {
 }
 
 type ParsedObj struct {
-	Info ParsedObjInfo `json:"info"`
-	Type string        `json:"type"`
+	Info any    `json:"info"`
+	Type string `json:"type"`
 }
 
 type InstructionInnerParsed struct {
-	Parsed      ParsedObj `json:"parsed"`
-	Program     string    `json:"program"`
-	ProgramId   string    `json:"programId"`
-	StackHeight uint64    `json:"stackHeight"`
+	Parsed      any    `json:"parsed"`
+	Program     string `json:"program"`
+	ProgramId   string `json:"programId"`
+	StackHeight uint64 `json:"stackHeight"`
 }
